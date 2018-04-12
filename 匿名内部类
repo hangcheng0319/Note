@@ -1,0 +1,59 @@
+比较接口,写的线程都会使用到
+是一个没有名字的局部内部类,只是用一次
+特点:
+1.匿名内部类本身没有构造方法,但是会调用父类的构造方法
+2.匿名内部类尽管没有构造方法,但是可以在匿名类中提供初始化代码块,JVM在调用父类的构造方法后执行这个代码块
+3.匿名内部类主要处理就是接口
+public interface Smoking(){
+}
+
+//匿名内部类
+public class Outter{
+  //作为属性存在
+  int num = 50;
+  Smoking smoke = new Smoking(){
+  @Override
+  public  void smoke(String name){
+    System.out.println(name);
+    }
+  }
+  public void show(){
+    smoke.smoke("小紫");
+  }
+}
+
+//
+  public class Outter2{
+    int sum = 30;
+    Smoking s = new Smoking(){
+    //在匿名内部类中所定义的属性和方法不推荐
+    //因为外部无法访问,成为垃圾代码
+      int num = 20;
+      @Override
+      public void smoke(String name){
+        System.out.println(num);
+        System.out.println(Outter2.this.num);
+      }
+    }
+  }
+  
+  
+  //
+  public class Test{
+    public static void main(String[] args){
+      //实现接口的方式
+      Smoking s = new Smoking
+      
+        @Override
+        public void smoke(String name){
+        
+        }
+        s.smoke("111");
+        int[] array = {1,4,6,2};
+        Array.sort(){
+        
+        
+        }
+        
+    }
+  }
